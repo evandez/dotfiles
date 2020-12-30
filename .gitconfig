@@ -1,0 +1,14 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Evan Hernandez
+	email = evanfredhernandez@gmail.com
+	signingkey = 9C981F9034EB27B0
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg2
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f

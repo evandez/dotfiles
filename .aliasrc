@@ -1,0 +1,33 @@
+# Basic aliases.
+alias l='ls'
+alias ll='ls -al'
+alias la='ls -a'
+
+# Git aliases. I do it here instead of .gitconfig so I don't have to type "git"
+# so much. ¯\_(ツ)_/¯
+alias g='git status'
+alias gh='git log -1 --stat'
+alias gr='git rebase -i'
+alias grc='git rebase --continue'
+alias gra='git rebase --abort'
+alias grm='git rm'
+alias gc='git commit'
+alias gca='git commit --amend'
+alias ga='git add'
+alias gaa='git add -A'
+alias gau='git add -u'
+alias gb='git branch'
+alias gol='git log --author=$(git config user.email) --oneline $(git remote)/master..HEAD'
+alias gd='git diff'
+alias gck='git checkout'
+alias gpr='git pull --rebase'
+alias gcn='git add -A && git commit --amend --no-edit'
+alias gcp='git cherry-pick'
+
+# Python aliases.
+alias pi='pip3 install'
+alias piu='pip3 install --upgrade'
+alias pu='pip3 uninstall'
+alias pt='pytest'
+alias py='python3'
+alias j='jupyter notebook'
