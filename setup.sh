@@ -49,9 +49,9 @@ slink() {
 
 # Link all dotfiles to the home directory, minus a few exceptions.
 echo 'will start linking dotfiles'
-dotfiles=$(find . -type f -name '.[^.]*' -not -name '.git')
-for dotfile in $dotfiles; do
-    echo $dotfile
+dotfiles=("${(@f)$(find . -type f -name '.[^.]*' -not -name '.git')}")
+for dotfile in $dotfiles
+do
     slink $(pwd)/$(basename $dotfile) ~/$(basename $dotfile)
 done
 
@@ -60,7 +60,8 @@ mkdir -p ~/.ssh
 slink $(pwd)/.ssh/config ~/.ssh/config
 
 cd $ORIGIN
-echo 'done, please restart terminal to see changes'
+echo '\ndone, please restart terminal to see changes'
 echo '\nWARNING! you may still need to do the following:'
 echo '  * migrate gpg2 keys from other devices'
 echo '  * synchronize vscode settings via github'
+echo
