@@ -3,6 +3,10 @@
 links=("${(@f)$(find ~ -maxdepth 2 -path '*.Trash*' -prune -false -o -type l)}")
 for link in $links
 do
-    echo "rm $link"
-    rm $link
+    if read -q "choice?rm $link? "
+    then
+        rm $link
+    else
+        echo "\nnot removing $link"
+    fi
 done
